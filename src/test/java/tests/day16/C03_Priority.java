@@ -1,7 +1,7 @@
 package tests.day16;
 
 import org.testng.annotations.Test;
-import utilites.TestBaseBeforeClassAfterClass;
+import utilities.TestBaseBeforeClassAfterClass;
 
 public class C03_Priority extends TestBaseBeforeClassAfterClass {
     @Test (priority = 1)
