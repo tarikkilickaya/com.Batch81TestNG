@@ -1,5 +1,6 @@
 package utilities;
 
+import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -44,6 +45,8 @@ public class Driver {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         return driver;
     }
+
+
 
     public static Actions actions = new Actions(Driver.getDriver());
 

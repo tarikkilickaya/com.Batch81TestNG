@@ -16,12 +16,12 @@ public class C02_HotelMyCampNegativeLoginTest {
 
         //login butonuna bas
         HotelMyCampPage hotelMyCampObje = new HotelMyCampPage();
-        hotelMyCampObje.loginButonu.click();
+        hotelMyCampObje.login.click();
 
         //test data username: manager1 ,
         //test data password : manager1!
         hotelMyCampObje.userName.sendKeys(ConfigReader.getProperty("hotelMyCampWrongUserName"));
-        Driver.actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("hotelMyCampWrongPassword")).sendKeys(Keys.ENTER).perform();
+        Driver.actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("hotelMyCampWrongPassword"), Keys.ENTER).perform();
 
         //Degerleri girildiginde sayfaya girilemedigini test et
         Assert.assertTrue(hotelMyCampObje.girisYapilamadi.isDisplayed());

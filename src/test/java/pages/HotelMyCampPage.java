@@ -12,7 +12,10 @@ public class HotelMyCampPage {
     }
 
     @FindBy(xpath = "//*[text()='Log in']")
-    public WebElement loginButonu;
+    public WebElement login;
+
+    @FindBy(xpath = "//*[@id='btnSubmit']")
+    public WebElement login2;
 
     @FindBy(xpath = "//*[@id='UserName']")
     public WebElement userName;
@@ -25,4 +28,29 @@ public class HotelMyCampPage {
 
     @FindBy(xpath = "//*[@id='divMessageResult']")
     public WebElement girisYapilamadi;
+
+    @FindBy(xpath = "//*[text()='Hotel Management']")
+    public WebElement hotelManagement;
+
+    @FindBy(xpath = "//*[@href='/admin/RoomReservationAdmin']")
+    public WebElement roomResevervation;
+
+    @FindBy(xpath = "//*[text()='Add Room Reservation ']")
+    public WebElement addRoomReservation;
+
+    @FindBy(xpath = "//*[@id='IDUser']")
+    public WebElement idUser;
+
+    @FindBy(xpath = "//*[@id='IDHotelRoom']")
+    public WebElement idHotelRoom;
+
+    @FindBy(xpath = "//*[@id='btnSubmit']")
+    public WebElement saveButonu;
+
+    @FindBy(xpath = "//*[@class='bootbox-body']")
+    public WebElement roomReservationText;
+
+    @FindBy(xpath = "//*[@class='btn btn-primary']")
+    public WebElement okButonu;
+
 }

@@ -1,4 +1,4 @@
-package tests.day19;
+package tests.day20;
 
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
@@ -7,10 +7,9 @@ import pages.HotelMyCampPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class C03_HotelMyCampPositiveTest {
+public class C01_SmokePozitifTest {
     @Test
-    public void positiveTest() {
-
+    public void pozitifTest() {
         //https://www.hotelmycamp.com/ adresine git
         Driver.getDriver().get(ConfigReader.getProperty("hotelMyCampUrl"));
 

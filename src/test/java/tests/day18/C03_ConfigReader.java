@@ -1,7 +1,6 @@
 package tests.day18;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HotelMyCampPage;
@@ -17,12 +16,15 @@ public class C03_ConfigReader {
 
         //login butonuna bas
         HotelMyCampPage hotelMyCampPage = new HotelMyCampPage();
-        hotelMyCampPage.loginButonu.click();
+        hotelMyCampPage.login.click();
 
         //test data username: manager
         //test data password : Manager1!
         hotelMyCampPage.userName.sendKeys(ConfigReader.getProperty("hotelMyCampUserName"));
-        Driver.actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("hotelMyCampPassword"), Keys.ENTER).perform();
+        hotelMyCampPage.password.sendKeys(ConfigReader.getProperty("hotelMyCampPassword"));
+        hotelMyCampPage.login2.click();
+
+        //Driver.actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("hotelMyCampPassword"), Keys.ENTER).perform();
 
         //Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
         Assert.assertTrue(hotelMyCampPage.girisYapildi.isDisplayed());
