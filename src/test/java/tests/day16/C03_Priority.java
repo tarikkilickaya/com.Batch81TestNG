@@ -19,7 +19,7 @@ public class C03_Priority extends TestBaseBeforeClassAfterClass {
         driver.get("https://www.amazon.com");
     }
 
-    @Test (priority = -1)
+    @Test (priority = -1, groups = "grup1")
     public void hepsiburadaTest() {
         driver.get("https://www.hepsiburada.com");
     }

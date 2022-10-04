@@ -2,7 +2,7 @@
 XML'e projemize isteklerimizi iletmek için hazırladığımız bir haberleşme dosyası diyebiliriz.
 Biz XML dosyamız sayesinde test classımızı açmadan, run tuşuna basmadan, istediğimiz test methodunu,
 istediğimiz classı ve istediğimiz package'ı çalıştırabilir ve package içindeki hangi classların ya da
-hangi test methodunun çalışacağını hangisinin çalışmayacağını belirtiebiliriz.
+hangi test methodunun çalışacağını hangisinin çalışmayacağını belirtebiliriz.
 
 HTML kodlarındaki gibi tagların açılıp kapanışına dikkat edilmelidir.
 

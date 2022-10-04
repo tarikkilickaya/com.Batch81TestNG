@@ -29,7 +29,7 @@ public class C03_E2ETest {
         //5. Login butonuna tıklayın.
         hotelMyCampObje.login2.click();
 
-        //6. Hotel Management/Hotel List menusunden ADD HOTEL butonuna tiklayin
+        //6. Hotel Management/Room Reservation menusunden ADD ROOM RESERVATION butonuna tiklayin
         hotelMyCampObje.hotelManagement.click();
         hotelMyCampObje.roomResevervation.click();
         hotelMyCampObje.addRoomReservation.click();

@@ -25,7 +25,7 @@ public class TestBaseBeforeAfter {
     public WebDriverWait wait;
 
 
-    @BeforeMethod
+    @BeforeMethod (groups = "grup1")
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -38,7 +38,7 @@ public class TestBaseBeforeAfter {
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
-    @AfterMethod
+    @AfterMethod (groups = "grup1")
     public void tearDown() {
         driver.quit();
     }

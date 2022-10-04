@@ -9,7 +9,7 @@ public class C01_BeforeMethodAfterMethod extends TestBaseBeforeAfter {
         driver.get("https://www.amazon.com");
     }
 
-    @Test
+    @Test (groups = "grup1")
     public void bestbuyTesti() {
         driver.get("https://www.bestbuy.com");
     }
