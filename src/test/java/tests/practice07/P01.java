@@ -43,8 +43,8 @@ public class P01 {
         }
 
         // Tüm yapılacakların silindiğini doğrulayın.
-        //Assert.assertTrue(webUniversityObje.todos.isEmpty());
-        //Driver.quitDriver();
+        Assert.assertFalse(webUniversityObje.todos.isEmpty());
+        Driver.quitDriver();
 
     }
 
