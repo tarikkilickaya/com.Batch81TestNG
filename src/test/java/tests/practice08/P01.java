@@ -34,13 +34,13 @@ public class P01 {
                 click(herokuTestObje.onMouseDown).perform();
 
 
-
-        Driver.quitDriver();
+        //Driver.quitDriver();
     }
 
     @Test(dependsOnMethods = "test01")
-    public void test02() {
+    public void test02() throws InterruptedException {
         List<WebElement> list = herokuTestObje.eventTriggered;
-        Assert.assertEquals(11, list.size());
+        Assert.assertEquals(herokuTestObje.eventTriggered, 11);
+        System.out.println(list.size());
     }
 }

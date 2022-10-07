@@ -46,6 +46,6 @@ public class HerokuTestPage {
     @FindBy(xpath = "//*[@id='onmousedown']")
     public WebElement onMouseDown;
 
-    @FindBy(xpath = "//*[text()='Event Triggered']")
+    @FindBy (xpath = ("//*[.='Event Triggered']"))
     public List<WebElement> eventTriggered;
 }
