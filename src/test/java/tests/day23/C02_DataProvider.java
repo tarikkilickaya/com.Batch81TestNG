@@ -6,8 +6,9 @@ import org.testng.annotations.Test;
 import pages.BlueRentalCarsPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
-public class C02_DataProvider {
+public class C02_DataProvider extends TestBaseRapor {
 
     BlueRentalCarsPage blueRentalCarsObje = new BlueRentalCarsPage();
 
