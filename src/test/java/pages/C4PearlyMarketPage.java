@@ -22,30 +22,78 @@ public class C4PearlyMarketPage {
 
     @FindBy(xpath = "//*[@value='Sign In']")
     public WebElement signIn2;
-    @FindBy(xpath ="(//*[@href='?add-to-cart=13861'])[1]")
-    public WebElement atToCardButton;
 
-    @FindBy(xpath ="//*[@data-id='fbb1175']")
-    public WebElement CardButton;
+    @FindBy(xpath = "(//*[@href='/shop/'])[2]")
+    public WebElement shopNow;
 
-    @FindBy(xpath="//*[@class='button checkout wc-forward']")
-    public WebElement CheckOutButton;
+    @FindBy(xpath = "(//*[text()='Shop Now'])[2]")
+    public WebElement shopNow2;
+
+    @FindBy(xpath = "(//*[text()='Shop Now'])[2]")
+    public WebElement shopNow3;
+
+
+    @FindBy(xpath = "(//*[text()='Add to cart'])[1]")
+    public WebElement addToCartButton;
+
+    @FindBy(xpath = "(//*[@class='w-icon-cart'])[1]")
+    public WebElement cardButton;
+
+    @FindBy(xpath = "(//*[@href='https://pearlymarket.com/urun/black-winter-skating/'])[1]")
+    public WebElement urun;
+
+    @FindBy(xpath = "//*[@class='button checkout wc-forward']")
+    public WebElement checkOutButton;
 
     @FindBy(xpath = "//*[@id='billing_first_name']")
     public WebElement firstName;
+
+
+    @FindBy(xpath = "//*[@id='billing_last_name']")
+    public WebElement lastName;
+
+    @FindBy(xpath = "//*[@id='select2-billing_country-container']")
+    public WebElement countryDropDown;
+
+    @FindBy(xpath = "//*[@id='billing_address_1']")
+    public WebElement streetAddress;
+
+    @FindBy(xpath = "//*[@id='billing_city']")
+    public WebElement townCity;
+
+    @FindBy(xpath = "//*[@id='select2-billing_state-container']")
+    public WebElement stateDropDown;
+
+    @FindBy(xpath = "//*[@id='billing_postcode']")
+    public WebElement zipcode;
+
+    @FindBy(xpath = "//*[@id='billing_phone']")
+    public WebElement phone;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @FindBy(xpath = "//*[@id='place_order']")
     public WebElement placeOrderbttn;
 
     @FindBy(xpath = "//*[text()='Thank you. Your order has been received.']")
     public WebElement orderReceived;
-    @FindBy(xpath = "//*[@href='?add-to-cart=15242']")
+
+    @FindBy(xpath = "//*[text()='Add to cart']")
     public WebElement yastikAddToCart;
 
-    @FindBy(xpath = "(//*[@href='/shop/'])[2]")
-    public WebElement shopNow;
 
-    @FindBy(xpath = "(//*[@src='https://pearlymarket.com/wp-content/uploads/2022/10/yastik-kilifi-1-300x300.jpg'])[1]")
+    @FindBy(xpath = "(//*[@class='woocommerce-LoopProduct-link woocommerce-loop-product__link'])[2]")
     public WebElement yastik;
 
 

@@ -2,11 +2,10 @@ package tests.US_017;
 
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.C4PearlyMarketPage;
 import utilities.ConfigReader;
@@ -22,6 +21,9 @@ public class US017_TC001 {
 
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
 
+    Select select = new Select(obje.countryDropDown);
+
+
     @Test
     public void US017_TC001() throws InterruptedException {
 
@@ -30,35 +32,40 @@ public class US017_TC001 {
         obje.signIn.click();
         ReusableMethods.waitForVisibility(obje.username, 15);
         obje.username.sendKeys("trkklckya@gmail.com");
-        Thread.sleep(3000);
         obje.password.sendKeys("tarik123");
         obje.signIn2.click();
-        //  Kullanıcı sepete ürün/ürünler ekler
-        wait.until(ExpectedConditions.elementToBeSelected(obje.shopNow));
-        //jse.executeScript("arguments[0].scrollIntoView(true);", obje.shopNow);
-        jse.executeScript("arguments[0].click();", obje.shopNow);
-        // c4PearlyMarketPage.shopNow.click();
-        Thread.sleep(5000);
-        actions.moveToElement(obje.yastik);
-        obje.yastikAddToCart.click();
-        //  jse.executeScript("arguments[0].scrollIntoView(true);", c4PearlyMarketPage.atToCardButton);
-        //  jse.executeScript("arguments[0].click();", c4PearlyMarketPage.atToCardButton);
 
-        obje.CardButton.click();
-        obje.CheckOutButton.click();
+        //  Kullanıcı sepete ürün/ürünler ekler
+        Thread.sleep(5000);
+        jse.executeScript("arguments[0].scrollIntoView(true);", obje.shopNow3);
+        jse.executeScript("arguments[0].scrollIntoView(true);", obje.shopNow3);
+        wait.until(ExpectedConditions.elementToBeClickable(obje.shopNow3));
+        jse.executeScript("arguments[0].click();", obje.shopNow3);
+        obje.yastik.click();
+        wait.until(ExpectedConditions.visibilityOf(obje.yastikAddToCart));
+        obje.yastikAddToCart.click();
+        obje.cardButton.click();
+        obje.checkOutButton.click();
+
 
         //  Kullanıcı Billing Address bilgilerini doğru girer
         obje.firstName.sendKeys("Cuneyt");
-        actions.sendKeys(Keys.TAB).sendKeys("Erdemir").sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("United States").sendKeys(Keys.TAB).
-                sendKeys("41. Street").sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("Dolapdere").sendKeys(Keys.TAB).sendKeys("Massachusetts").
-                sendKeys(Keys.TAB).sendKeys("38400").sendKeys(Keys.TAB).sendKeys("1234567").perform();
+        obje.lastName.sendKeys("Erdemir");
+        obje.countryDropDown.click();
+        select.selectByVisibleText("United States (US)");
+        obje.streetAddress.sendKeys("41. cadde");
+        obje.townCity.sendKeys("Dolapdere");
+       // select = new Select(obje.stateDropDown);
+        obje.stateDropDown.click();
+        select.selectByVisibleText("Massachusetts");
+        obje.zipcode.sendKeys("38400");
+        obje.phone.sendKeys("123456789");
+
         // Shipping Address seçeneğini tıklamadan sipariş verir
+        //obje.placeOrderbttn.click();
 
-        obje.placeOrderbttn.click();
         // Alışverişin tamamlandığı bilgisi görüntülenir
-        Assert.assertTrue(obje.orderReceived.isDisplayed());
-
+        //Assert.assertTrue(obje.orderReceived.isDisplayed());
 
     }
-
 }
