@@ -23,15 +23,11 @@ public class C4PearlyMarketPage {
     @FindBy(xpath = "//*[@value='Sign In']")
     public WebElement signIn2;
 
-    @FindBy(xpath = "(//*[@href='/shop/'])[2]")
+    @FindBy(xpath = "(//*[text()='Shop Now'])[2]")
     public WebElement shopNow;
 
-    @FindBy(xpath = "(//*[text()='Shop Now'])[2]")
+    @FindBy(xpath = "(//*[@class='w-icon-long-arrow-right'])[2]")
     public WebElement shopNow2;
-
-    @FindBy(xpath = "(//*[text()='Shop Now'])[2]")
-    public WebElement shopNow3;
-
 
     @FindBy(xpath = "(//*[text()='Add to cart'])[1]")
     public WebElement addToCartButton;
@@ -47,7 +43,6 @@ public class C4PearlyMarketPage {
 
     @FindBy(xpath = "//*[@id='billing_first_name']")
     public WebElement firstName;
-
 
     @FindBy(xpath = "//*[@id='billing_last_name']")
     public WebElement lastName;
@@ -70,19 +65,6 @@ public class C4PearlyMarketPage {
     @FindBy(xpath = "//*[@id='billing_phone']")
     public WebElement phone;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     @FindBy(xpath = "//*[@id='place_order']")
     public WebElement placeOrderbttn;
 
@@ -92,9 +74,14 @@ public class C4PearlyMarketPage {
     @FindBy(xpath = "//*[text()='Add to cart']")
     public WebElement yastikAddToCart;
 
-
     @FindBy(xpath = "(//*[@class='woocommerce-LoopProduct-link woocommerce-loop-product__link'])[2]")
     public WebElement yastik;
 
+
+    @FindBy(xpath = "//*[text()='Air frayer']")
+    public WebElement airfrayer;
+
+    @FindBy(xpath = "(//*[text()='Add to cart'])[4]")
+    public WebElement airfrayerAddToCart;
 
 }

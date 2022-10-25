@@ -17,11 +17,10 @@ import java.time.Duration;
 public class US017_TC001 {
     JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
     C4PearlyMarketPage obje = new C4PearlyMarketPage();
+
     Actions actions = new Actions(Driver.getDriver());
 
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
-
-    Select select = new Select(obje.countryDropDown);
 
 
     @Test
@@ -31,16 +30,16 @@ public class US017_TC001 {
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));
         obje.signIn.click();
         ReusableMethods.waitForVisibility(obje.username, 15);
-        obje.username.sendKeys("trkklckya@gmail.com");
-        obje.password.sendKeys("tarik123");
+        obje.username.sendKeys("bunedirya@gmail.com");
+        obje.password.sendKeys("Muzaffer");
         obje.signIn2.click();
 
         //  Kullanıcı sepete ürün/ürünler ekler
         Thread.sleep(5000);
-        jse.executeScript("arguments[0].scrollIntoView(true);", obje.shopNow3);
-        jse.executeScript("arguments[0].scrollIntoView(true);", obje.shopNow3);
-        wait.until(ExpectedConditions.elementToBeClickable(obje.shopNow3));
-        jse.executeScript("arguments[0].click();", obje.shopNow3);
+        jse.executeScript("arguments[0].scrollIntoView(true);", obje.shopNow);
+        jse.executeScript("arguments[0].scrollIntoView(true);", obje.shopNow);
+        wait.until(ExpectedConditions.elementToBeClickable(obje.shopNow));
+        jse.executeScript("arguments[0].click();", obje.shopNow);
         obje.yastik.click();
         wait.until(ExpectedConditions.visibilityOf(obje.yastikAddToCart));
         obje.yastikAddToCart.click();
@@ -49,13 +48,14 @@ public class US017_TC001 {
 
 
         //  Kullanıcı Billing Address bilgilerini doğru girer
+        Select select = new Select(obje.countryDropDown);
         obje.firstName.sendKeys("Cuneyt");
         obje.lastName.sendKeys("Erdemir");
         obje.countryDropDown.click();
         select.selectByVisibleText("United States (US)");
         obje.streetAddress.sendKeys("41. cadde");
         obje.townCity.sendKeys("Dolapdere");
-       // select = new Select(obje.stateDropDown);
+        select = new Select(obje.stateDropDown);
         obje.stateDropDown.click();
         select.selectByVisibleText("Massachusetts");
         obje.zipcode.sendKeys("38400");
