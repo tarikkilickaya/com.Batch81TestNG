@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="basePath">target/logs</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="file"
+                     filePattern="${basePath}/TechProEd-%d{HH-mm-ss.SSS}.log">
+            <PatternLayout>
+                <pattern>%d %p %c{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+            <SizeBasedTriggeringPolicy size="500"/>
+        </RollingFile>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <!-- Bu kısım root leveldeki varsayılan ayarları override etmek için kullanılır -->
+        <Logger name="tests.log4J.Log4JTest2" level="trace" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="file"/>
+        </Logger>
+
+        <Logger name="tests.log4J.Log4JTest1" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="file"/>
+        </Logger>
+
+<!-- ROOT LEVEL = Tüm classlara otomatik uygulanan ayar -->
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="file"/>
+        </Root>
+    </Loggers>
+</Configuration>
